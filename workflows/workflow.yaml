@@ -1,0 +1,76 @@
+name: Deploy updates
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    types: [opened, synchronize, reopened, closed]
+    branches:
+      - main
+
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      packages: read
+
+    # only run if commit message contains versioning setting
+    if: |
+      contains(github.event.head_commit.message, '[tag:patch]')
+      || contains(github.event.head_commit.message, '[tag:minor]')
+      || contains(github.event.head_commit.message, '[tag:major]')
+
+    name: Build and Deploy Job
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+          submodules: true
+
+      - name: Generate version
+        id: version
+        uses: paulhatch/semantic-version@v4.0.2
+        with:
+          major_pattern: "[tag:major]"
+          minor_pattern: "[tag:minor]"
+          short_tags: false
+
+      - name: Tag repo
+        uses: actions/github-script@v5
+        with:
+          script: |
+            github.rest.git.createRef({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              ref: "refs/tags/${{ steps.version.outputs.version_tag }}",
+              sha: context.sha
+            })
+
+      # - name: Setup node
+      #   uses: actions/setup-node@v2
+      #   with:
+      #     node-version: ${{ env.NODE_VERSION }}
+      #     registry-url: https://npm.pkg.github.com
+      #     scope: "@credibil"
+      #   env:
+      #     NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # - name: Build
+      #   run: |
+      #     yarn install
+      #     yarn build
+
+      - name: Deploy
+        id: deploy
+        uses: Azure/static-web-apps-deploy@v1
+        with:
+          azure_static_web_apps_api_token: ${{ secrets.DEPLOYMENT_TOKEN }}
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          action: upload
+          app_location: /
+          output_location: build
+
+          # app_location: build
+          # skip_app_build: true
