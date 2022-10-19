@@ -1,6 +1,6 @@
 ---
-sidebar_position: 4
-description: Test tenants
+sidebar_position: 2
+title: Test Tenants
 ---
 
 # Test Tenants

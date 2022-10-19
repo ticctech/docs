@@ -1,6 +1,6 @@
 ---
 sidebar_position: 3
-description: A brief guide to getting started with feature flags
+title: Using Feature Flags
 ---
 
 # Using Feature Flags
