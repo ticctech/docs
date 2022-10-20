@@ -21,8 +21,3 @@ export const Home = () => {
 }
 
 export default Home;
-
-function fetch(README: any) {
-    throw new Error('Function not implemented.');
-}
-

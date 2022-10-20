@@ -13,7 +13,6 @@ import { Link as RouterLink } from 'react-router-dom';
 import Box from '@mui/material/Box';
 import { styled } from '@mui/material/styles';
 import Container from "@mui/material/Container";
-import Markdown from 'react-markdown';
 
 import Header from "./Header";
 import Footer from "./Footer";
@@ -21,7 +20,7 @@ import Logo from './Logo';
 
 import { useStaticData } from 'vite-plugin-react-pages/client'
 
-const drawerWidth: Object = 240;
+const drawerWidth: Object = 250;
 
 interface Props {
     loadState: any
@@ -79,6 +78,7 @@ export const Viewport = (props: Props) => {
             </Drawer>
             <Container>
                 <Main sx={{
+                    typography: 'body1',
                     display: 'flex',
                     flexDirection: 'column',
                     minHeight: '100vh',
