@@ -1,7 +1,6 @@
-import React, { useMemo, useEffect } from 'react';
+import React from 'react';
 
 import type { ThemeProps } from 'vite-plugin-react-pages/clientTypes'
-import { useStaticData } from 'vite-plugin-react-pages/client'
 
 import NotFound from '../components/NotFound';
 import Outline from '../components/Outline';
@@ -10,45 +9,36 @@ import Box from '@mui/material/Box';
 import { SideBar } from '../components/Viewport/SideBar';
 
 
-const App = ({ loadedData, loadState }: ThemeProps) => {
+const MainComponent = ({ loadedData, loadState }: ThemeProps) => {
   const loading = loadState.type;
-  const staticData = useStaticData()
 
   if (loading === '404') {
-    return (
-      <Wrapper>
-        <NotFound />
-      </Wrapper>
-    )
+    return <NotFound />
   }
   if (loading !== 'loaded') {
-    return (
-      <Wrapper>
-        <Outline visible />
-      </Wrapper>
-    )
+    return <Outline visible />
   }
 
   const pageData = loadedData[loadState.routePath];
   const Component = pageData.main.default;
 
-  // console.log(pageData.main)
-  const data = staticData[loadState.routePath].main
-
-  console.log(staticData)
-  console.log('')
-  const title = data.title
-  const hide = data.sourceType === 'js'
+  console.log(loadState.routePath)
 
 
   return (
-    <Wrapper >
-      <SideBar visible={hide} title={title} />
+    <>
+      <SideBar loadState={loadState} />
       <Box sx={{ typography: 'body1' }}>
         <Component />
       </Box>
-    </Wrapper >
+    </>
+  )
+}
+const App = ({ loadedData, loadState }: ThemeProps) => {
+  return (
+    <Wrapper >
+      <MainComponent loadState={loadState} loadedData={loadedData} />
+    </Wrapper>
   )
 }
 export default App;
-
