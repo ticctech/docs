@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 
+import type { LoadState } from 'vite-plugin-react-pages/clientTypes';
 import List from '@mui/material/List';
 import Link from '@mui/material/Link';
 import Divider from '@mui/material/Divider';
@@ -23,12 +24,13 @@ import { useStaticData } from 'vite-plugin-react-pages/client'
 const drawerWidth: Object = 250;
 
 interface Props {
-    loadState: any
+    loadState: LoadState
     children: React.ReactNode
 }
 
+
 const Main = styled(Box)(
-    ({ theme }: any) => ({
+    ({ theme }) => ({
         marginTop: theme.spacing(8),
         transition: theme.transitions.create('margin', {
             easing: theme.transitions.easing.easeOut,
