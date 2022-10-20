@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 
 import Wrapper from './Wrapper';
 
-const style = {
+const style: Object = {
     '&:hover': {
         color: 'background.paper'
     }
