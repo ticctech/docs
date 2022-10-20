@@ -1,54 +1,54 @@
-import React from 'react';
+import React, { useMemo, useEffect } from 'react';
 
-import { defaultSideNavs, useThemeCtx } from 'vite-pages-theme-doc';
-import { ThemeProvider } from '@mui/material/styles';
+import type { ThemeProps } from 'vite-plugin-react-pages/clientTypes'
+import { useStaticData } from 'vite-plugin-react-pages/client'
 
+import NotFound from '../components/NotFound';
 import Outline from '../components/Outline';
-import Viewport from '../components/Viewport';
-import theme from '../theme';;
-
-const Wrapper = ({ children }: any) => {
-  return (
-    <ThemeProvider theme={theme}>
-      {children}
-    </ThemeProvider>
-  )
-}
+import Wrapper from '../components/Wrapper';
+import Box from '@mui/material/Box';
+import { SideBar } from '../components/Viewport/SideBar';
 
 
-const createTheme = () => {
-  return ({ loadedData, loadState }) => {
-    if (loadState.type !== 'loaded')
-      return (
-        <Outline visible />
-      )
-    const pageData = loadedData[loadState.routePath]
-    console.log("pageData", pageData)
-    const Component = pageData.main.default
+const App = ({ loadedData, loadState }: ThemeProps) => {
+  const loading = loadState.type;
+  const staticData = useStaticData()
 
+  if (loading === '404') {
     return (
       <Wrapper>
-        <Viewport>
-          <Component />
-        </Viewport>
+        <NotFound />
       </Wrapper>
     )
   }
+  if (loading !== 'loaded') {
+    return (
+      <Wrapper>
+        <Outline visible />
+      </Wrapper>
+    )
+  }
+
+  const pageData = loadedData[loadState.routePath];
+  const Component = pageData.main.default;
+
+  // console.log(pageData.main)
+  const data = staticData[loadState.routePath].main
+
+  console.log(staticData)
+  console.log('')
+  const title = data.title
+  const hide = data.sourceType === 'js'
+
+
+  return (
+    <Wrapper >
+      <SideBar visible={hide} title={title} />
+      <Box sx={{ typography: 'body1' }}>
+        <Component />
+      </Box>
+    </Wrapper >
+  )
 }
-
-const sideNav = (ctx: any) => {
-  console.log(ctx)
-  return (defaultSideNavs(
-    ctx
-  ))
-}
-
-const topNavs = [
-  { label: 'Architecture', path: '/architecture' },
-  { label: 'Dev', path: '/dev' },
-  { label: 'UX', path: '/ux' }
-]
-
-
-export default createTheme();
+export default App;
 

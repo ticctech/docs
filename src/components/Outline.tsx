@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Container from '@mui/material/Container';
+import Stack from '@mui/material/Stack';
 import Skeleton from '@mui/material/Skeleton';
 
 export const Outline = ({ visible }: any) => {
@@ -9,18 +9,12 @@ export const Outline = ({ visible }: any) => {
     }
 
     return (
-        <Container maxWidth="lg" sx={{ py: 4, mt: 10 }}>
-            <Skeleton height="5rem" />
+        <Stack spacing={2} sx={{ py: 4, mt: 10 }}>
+            <Skeleton variant="rounded" height="5rem" />
             <Skeleton variant="rectangular" height="20rem" />
-            <Skeleton height="5rem" />
-        </Container>
+            <Skeleton variant="rounded" height="5rem" />
+        </Stack>
     );
 };
-
-export const ListSkeleton = () => {
-    return (
-        <Skeleton variant='text' width="100%" height={52} />
-    )
-}
 
 export default Outline;

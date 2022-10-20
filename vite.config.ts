@@ -20,8 +20,8 @@ export default defineConfig({
     host: true,
     port: 3001
   },
-  // resolve: {
-  //   // eslint-disable-next-line no-undef
-  //   alias: { '@': path.resolve(__dirname, './src') }
-  // },
+  resolve: {
+    // eslint-disable-next-line no-undef
+    alias: { '@': path.resolve(__dirname, './src') }
+  },
 })
