@@ -6,10 +6,10 @@ import NotFound from '../components/NotFound';
 import Outline from '../components/Outline';
 import Wrapper from '../components/Wrapper';
 import Box from '@mui/material/Box';
-import { SideBar } from '../components/Viewport/SideBar';
+import Viewport from '../components/Viewport';
 
 
-const MainComponent = ({ loadedData, loadState }: ThemeProps) => {
+const App = ({ loadedData, loadState }: ThemeProps) => {
   const loading = loadState.type;
 
   if (loading === '404') {
@@ -22,23 +22,15 @@ const MainComponent = ({ loadedData, loadState }: ThemeProps) => {
   const pageData = loadedData[loadState.routePath];
   const Component = pageData.main.default;
 
-  console.log(loadState.routePath)
-
-
   return (
-    <>
-      <SideBar loadState={loadState} />
-      <Box sx={{ typography: 'body1' }}>
-        <Component />
-      </Box>
-    </>
-  )
-}
-const App = ({ loadedData, loadState }: ThemeProps) => {
-  return (
-    <Wrapper >
-      <MainComponent loadState={loadState} loadedData={loadedData} />
+    <Wrapper>
+      <Viewport loadState={loadState} >
+        <Box sx={{ typography: 'body1' }}>
+          <Component />
+        </Box>
+      </Viewport>
     </Wrapper>
   )
 }
+
 export default App;

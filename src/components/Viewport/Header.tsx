@@ -5,19 +5,15 @@ import Box from '@mui/material/Box';
 import Link from '@mui/material/Link';
 import Toolbar from '@mui/material/Toolbar';
 import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
 import { Link as RouterLink } from 'react-router-dom';
 
-import Logo from './Logo';
-
-export const Header = () => {
+export const Header = ({ drawerWidth }: any) => {
     return (
-        <AppBar position="fixed" component="nav" elevation={1} color="inherit" sx={{ padding: 1, }}>
+        <AppBar sx={{
+            width: { sm: `calc(100% - ${drawerWidth}px)` },
+            ml: { sm: `${drawerWidth}px` },
+        }} position="fixed" component="nav" elevation={1} color="inherit">
             <Toolbar >
-                <Link component={RouterLink} to="/" underline="none" sx={{ display: 'flex', '& svg': { fontSize: '2rem', mr: 1 }, alignItems: 'center', color: 'info.main', cursor: 'pointer' }} >
-                    <Logo />
-                </Link>
-                <Typography sx={{ flexGrow: { xs: 1, sm: 0 } }}>AMLIFY Documentation</Typography>
                 <Box
                     component="nav"
                     sx={{
