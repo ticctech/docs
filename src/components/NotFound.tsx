@@ -6,25 +6,22 @@ const size: String = '100%'
 
 const divStyle: Object = {
     display: 'flex',
+    flexDirection: 'column',
     justifyContent: "center",
     alignItems: "center",
     width: size,
     height: size
 }
 
-
 const NotFound = () => {
     return (
         <div style={divStyle}>
-            <div>
-                <h1>404</h1>
-                <h2>Page not found</h2>
-                <Button variant="outlined" color="#156999" href="/">
-                    Return Home
-                </Button>
-            </div>
+            <h1>404</h1>
+            <h2>Page not found</h2>
+            <Button variant="contained" color="#156999" href="/">
+                Return Home
+            </Button>
         </div>
     )
 }
 export default NotFound;
-
