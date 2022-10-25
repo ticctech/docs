@@ -1,0 +1,756 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "entity/v1/entity.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "EntityService"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/v1": {
+      "get": {
+        "summary": "Query is used to search for entities (people or organisations).",
+        "operationId": "EntityService_Query",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1QueryResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "offset",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "searchText",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "customers",
+            "in": "query",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "name": "externalRef",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "EntityService"
+        ]
+      },
+      "post": {
+        "summary": "Create an entity.",
+        "operationId": "EntityService_Create",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateRequest"
+            }
+          }
+        ],
+        "tags": [
+          "EntityService"
+        ]
+      }
+    },
+    "/v1/link": {
+      "post": {
+        "summary": "Link links the specified entities to each other.",
+        "operationId": "EntityService_Link",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1LinkResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1LinkRequest"
+            }
+          }
+        ],
+        "tags": [
+          "EntityService"
+        ]
+      }
+    },
+    "/v1/unlink": {
+      "post": {
+        "summary": "Unlink unlinks the specified entities from each other.",
+        "operationId": "EntityService_Unlink",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UnlinkResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UnlinkRequest"
+            }
+          }
+        ],
+        "tags": [
+          "EntityService"
+        ]
+      }
+    },
+    "/v1/{entity.id}": {
+      "put": {
+        "summary": "Update an entity.",
+        "operationId": "EntityService_Update2",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UpdateResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "entity.id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "entity": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    },
+                    "risk": {
+                      "$ref": "#/definitions/EntityRisk"
+                    },
+                    "person": {
+                      "$ref": "#/definitions/v1Person",
+                      "title": "// require at least one field to be set\noption (validate.required) = true;"
+                    },
+                    "organisation": {
+                      "$ref": "#/definitions/v1Organisation"
+                    },
+                    "customer": {
+                      "type": "boolean",
+                      "description": "Customer-specific fields. When the entity is also a customer, the following\nfields will be populated."
+                    },
+                    "businessNature": {
+                      "type": "string"
+                    },
+                    "relationshipPurpose": {
+                      "type": "string"
+                    },
+                    "keyPeople": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/definitions/v1Entity"
+                      },
+                      "description": "Key people connected to this entity if the entity is an organisation. This\nis used to describe UBO-type relationshsips."
+                    },
+                    "relatedParties": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/definitions/v1Entity"
+                      },
+                      "description": "Other entities connected to this entity. This is used to describe any\nrelationship of significance such as remitter/remittee, buyer/seller, etc."
+                    },
+                    "externalRef": {
+                      "type": "string",
+                      "description": "A unique reference to the entity if it exists in an external system (e.g.\nCRM)."
+                    },
+                    "keyPersonOf": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/definitions/v1Entity"
+                      },
+                      "title": "key person to relationship"
+                    },
+                    "relatedPartyOf": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/definitions/v1Entity"
+                      },
+                      "title": "related party of the key person"
+                    }
+                  },
+                  "description": "Entity represents an organisation or person associated with the customer.\nEntities are linked through relationships to create an ownership structure."
+                },
+                "updateMask": {
+                  "type": "string"
+                }
+              },
+              "description": "UpdateRequest is used to specify an entity to update."
+            }
+          }
+        ],
+        "tags": [
+          "EntityService"
+        ]
+      },
+      "patch": {
+        "summary": "Update an entity.",
+        "operationId": "EntityService_Update",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UpdateResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "entity.id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "entity",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "risk": {
+                  "$ref": "#/definitions/EntityRisk"
+                },
+                "person": {
+                  "$ref": "#/definitions/v1Person",
+                  "title": "// require at least one field to be set\noption (validate.required) = true;"
+                },
+                "organisation": {
+                  "$ref": "#/definitions/v1Organisation"
+                },
+                "customer": {
+                  "type": "boolean",
+                  "description": "Customer-specific fields. When the entity is also a customer, the following\nfields will be populated."
+                },
+                "businessNature": {
+                  "type": "string"
+                },
+                "relationshipPurpose": {
+                  "type": "string"
+                },
+                "keyPeople": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/v1Entity"
+                  },
+                  "description": "Key people connected to this entity if the entity is an organisation. This\nis used to describe UBO-type relationshsips."
+                },
+                "relatedParties": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/v1Entity"
+                  },
+                  "description": "Other entities connected to this entity. This is used to describe any\nrelationship of significance such as remitter/remittee, buyer/seller, etc."
+                },
+                "externalRef": {
+                  "type": "string",
+                  "description": "A unique reference to the entity if it exists in an external system (e.g.\nCRM)."
+                },
+                "keyPersonOf": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/v1Entity"
+                  },
+                  "title": "key person to relationship"
+                },
+                "relatedPartyOf": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/v1Entity"
+                  },
+                  "title": "related party of the key person"
+                }
+              },
+              "description": "Entity represents an organisation or person associated with the customer.\nEntities are linked through relationships to create an ownership structure."
+            }
+          },
+          {
+            "name": "updateMask",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "EntityService"
+        ]
+      }
+    },
+    "/v1/{entityId}": {
+      "get": {
+        "summary": "Get retrieves the entity specified.\nQuery params (e.g. max_depth) are automatically bound.",
+        "operationId": "EntityService_Get",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "entityId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "EntityService"
+        ]
+      },
+      "delete": {
+        "summary": "Delete the specified entity.",
+        "operationId": "EntityService_Delete",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1DeleteResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "entityId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "EntityService"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "EntityRisk": {
+      "type": "string",
+      "enum": [
+        "RISK_UNSPECIFIED",
+        "RISK_LOW",
+        "RISK_MODERATE",
+        "RISK_HIGH"
+      ],
+      "default": "RISK_UNSPECIFIED",
+      "title": "The AML risk this entity represents to the Reporting Entity"
+    },
+    "PersonAddress": {
+      "type": "object",
+      "properties": {
+        "residence": {
+          "type": "string"
+        },
+        "locality": {
+          "type": "string",
+          "description": "village, island, town, city, etc."
+        },
+        "region": {
+          "type": "string",
+          "description": "state, province, etc."
+        },
+        "postCode": {
+          "type": "string"
+        },
+        "country": {
+          "type": "string"
+        }
+      },
+      "title": "Variable address elements that help identify an individual's place of\nresidence within the given locality. For example, building, sub-building,\npremise number (house number), premise range thoroughfare (street),\nsub-thoroughfare, double-dependent locality sub-locality (suburb)"
+    },
+    "PersonGender": {
+      "type": "string",
+      "enum": [
+        "GENDER_UNSPECIFIED",
+        "GENDER_MALE",
+        "GENDER_FEMALE",
+        "GENDER_NON_BINARY",
+        "GENDER_OTHER_TERM"
+      ],
+      "default": "GENDER_UNSPECIFIED",
+      "title": "Gender is used to record an indiviual's gender"
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1CreateRequest": {
+      "type": "object",
+      "properties": {
+        "entity": {
+          "$ref": "#/definitions/v1Entity"
+        },
+        "keyPersonOfId": {
+          "type": "string"
+        },
+        "relatedPartyOfId": {
+          "type": "string"
+        }
+      },
+      "description": "CreateRequest contains information needed to create a new entity."
+    },
+    "v1CreateResponse": {
+      "type": "object",
+      "properties": {
+        "entity": {
+          "$ref": "#/definitions/v1Entity"
+        }
+      },
+      "description": "CreateResponse returns the newly created entity for the Create method."
+    },
+    "v1DeleteResponse": {
+      "type": "object",
+      "description": "DeleteResponse returns an empty response and can be ignored."
+    },
+    "v1Entity": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "risk": {
+          "$ref": "#/definitions/EntityRisk"
+        },
+        "person": {
+          "$ref": "#/definitions/v1Person",
+          "title": "// require at least one field to be set\noption (validate.required) = true;"
+        },
+        "organisation": {
+          "$ref": "#/definitions/v1Organisation"
+        },
+        "customer": {
+          "type": "boolean",
+          "description": "Customer-specific fields. When the entity is also a customer, the following\nfields will be populated."
+        },
+        "businessNature": {
+          "type": "string"
+        },
+        "relationshipPurpose": {
+          "type": "string"
+        },
+        "keyPeople": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Entity"
+          },
+          "description": "Key people connected to this entity if the entity is an organisation. This\nis used to describe UBO-type relationshsips."
+        },
+        "relatedParties": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Entity"
+          },
+          "description": "Other entities connected to this entity. This is used to describe any\nrelationship of significance such as remitter/remittee, buyer/seller, etc."
+        },
+        "externalRef": {
+          "type": "string",
+          "description": "A unique reference to the entity if it exists in an external system (e.g.\nCRM)."
+        },
+        "keyPersonOf": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Entity"
+          },
+          "title": "key person to relationship"
+        },
+        "relatedPartyOf": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Entity"
+          },
+          "title": "related party of the key person"
+        }
+      },
+      "description": "Entity represents an organisation or person associated with the customer.\nEntities are linked through relationships to create an ownership structure."
+    },
+    "v1GetResponse": {
+      "type": "object",
+      "properties": {
+        "entity": {
+          "$ref": "#/definitions/v1Entity"
+        }
+      },
+      "description": "GetResponse returns an entity based on the entity id\nprovided in the GetRequest."
+    },
+    "v1LinkRequest": {
+      "type": "object",
+      "properties": {
+        "relationship": {
+          "$ref": "#/definitions/v1Relationship"
+        }
+      },
+      "description": "LinkRequest specifies the ownership to create between 2 entities when the\nLink method is called."
+    },
+    "v1LinkResponse": {
+      "type": "object",
+      "description": "LinkResponse is returned by the Link method. It is empty so can be safely\nignored."
+    },
+    "v1Organisation": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "number": {
+          "type": "string"
+        },
+        "type": {
+          "$ref": "#/definitions/v1OrganisationType"
+        },
+        "industry": {
+          "type": "string"
+        }
+      },
+      "description": "Organisation contains core identifying information for an organisation."
+    },
+    "v1OrganisationType": {
+      "type": "string",
+      "enum": [
+        "TYPE_UNSPECIFIED",
+        "TYPE_COMPANY",
+        "TYPE_TRUST",
+        "TYPE_LISTED_COMPANY",
+        "TYPE_NOMINEE",
+        "TYPE_GOVERNMENT",
+        "TYPE_PUBLIC_PRIVATE",
+        "TYPE_INFORMAL_GROUP"
+      ],
+      "default": "TYPE_UNSPECIFIED",
+      "description": "Type is the list of values that can be used when setting the type of\norganisation."
+    },
+    "v1Person": {
+      "type": "object",
+      "properties": {
+        "givenNames": {
+          "type": "string"
+        },
+        "familyName": {
+          "type": "string"
+        },
+        "dateOfBirth": {
+          "type": "string",
+          "description": "Date of birth is a string because it is locale-specific. Expected pattern:\nyyyy-mm-dd."
+        },
+        "placeOfBirth": {
+          "type": "string"
+        },
+        "gender": {
+          "$ref": "#/definitions/PersonGender"
+        },
+        "address": {
+          "$ref": "#/definitions/PersonAddress"
+        },
+        "occupation": {
+          "type": "string"
+        }
+      },
+      "description": "Person contains core identifying information needed for an individual."
+    },
+    "v1QueryResponse": {
+      "type": "object",
+      "properties": {
+        "cursor": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Entity"
+          }
+        },
+        "matches": {
+          "type": "string",
+          "format": "int64"
+        }
+      },
+      "description": "QueryResponse returns a paged list of entities matching\nQueryRequest criteria. Matches provides the total number of records matching\nthe query regardless of limit."
+    },
+    "v1Relationship": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "$ref": "#/definitions/v1RelationshipType"
+        },
+        "sourceEntityId": {
+          "type": "string",
+          "description": "Source entity for the relationship."
+        },
+        "targetEntityId": {
+          "type": "string",
+          "description": "Target entity for the relationship."
+        }
+      },
+      "description": "Relationship expresses a relationship of some kind between 2 entities."
+    },
+    "v1RelationshipType": {
+      "type": "string",
+      "enum": [
+        "TYPE_UNSPECIFIED",
+        "TYPE_RELATED_PARTY_OF",
+        "TYPE_KEY_PERSON_OF"
+      ],
+      "default": "TYPE_UNSPECIFIED",
+      "description": "The type of relationship between the 2 entities (aka Label).\nSource and Target nodes are defined by the relationship type. For a\nTYPE_KEY_PERSON_OF relationship, the source is a person entity and the\ntarget is an organisation entity."
+    },
+    "v1UnlinkRequest": {
+      "type": "object",
+      "properties": {
+        "relationship": {
+          "$ref": "#/definitions/v1Relationship"
+        }
+      },
+      "description": "UnlinkRequest specifies the ownership to break when calling the Unlink\nmethod."
+    },
+    "v1UnlinkResponse": {
+      "type": "object",
+      "description": "UnlinkResponse is returned by the Unlink method. It is empty so can be safely\nignored."
+    },
+    "v1UpdateResponse": {
+      "type": "object",
+      "properties": {
+        "entity": {
+          "$ref": "#/definitions/v1Entity"
+        }
+      },
+      "description": "UpdateResponse returns an updated entity based on the one provided\nin the UpdateRequest."
+    }
+  }
+}

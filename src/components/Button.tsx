@@ -2,10 +2,10 @@ import React from 'react';
 
 import { createUseStyles } from 'react-jss';
 import clsx from 'clsx';
-
 import { useHistory } from 'react-router-dom';
 
 const primaryColor: string = '#156999';
+const hoverColor: string = '#003f6b';
 
 const useStyles = createUseStyles({
     button: {
@@ -32,17 +32,19 @@ const useStyles = createUseStyles({
     defaultStyle: {
         color: primaryColor,
         '&:hover': {
-            color: '#003f6b',
+            color: hoverColor,
             backgroundColor: '#f5f5f5',
             textDecoration: 'none'
         }
     },
     outlinedStyle: {
         color: primaryColor,
-        backgroundColor: 'auto',
-        border: `1px solid #156999`,
+        backgroundColor: '#fff',
+        border: `1px solid ${primaryColor}`,
         '&:hover': {
-            color: '#003f6b',
+            color: hoverColor,
+            borderColor: hoverColor,
+            backgroundColor: '#f5f5f5',
             textDecoration: 'none'
         }
     },
@@ -51,7 +53,7 @@ const useStyles = createUseStyles({
         backgroundColor: primaryColor,
         boxShadow: '0 0 0.4rem rgba(0, 0, 0, 0.3)',
         '&:hover': {
-            backgroundColor: '#003f6b',
+            backgroundColor: hoverColor,
             color: '#fff',
             textDecoration: 'none'
         }
@@ -61,7 +63,7 @@ const useStyles = createUseStyles({
 type ButtonProps = {
     variant?: String
     children: String
-    href?: string
+    href: string
     style?: Object;
 }
 

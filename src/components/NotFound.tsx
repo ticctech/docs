@@ -1,6 +1,7 @@
 import React from "react";
 
-import Button from '../components/Button';
+import Button from './Button';
+import { ErrorIcon } from './Icons';
 
 const size: String = '100%'
 
@@ -16,6 +17,7 @@ const divStyle: Object = {
 const NotFound = () => {
     return (
         <div style={divStyle}>
+            <ErrorIcon />
             <h1>404</h1>
             <h2>Error Page not found</h2>
             <Button variant="contained" href="/">

@@ -6,7 +6,8 @@ import { useLocation } from 'react-router-dom'
 const navs = [
   { label: 'Architecture', path: '/architecture' },
   { label: 'Dev', path: '/dev' },
-  { label: 'UX', path: '/ux' }
+  { label: 'UX', path: '/ux' },
+  { label: 'Swagger', path: '/swagger' },
 ]
 
 
