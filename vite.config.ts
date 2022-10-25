@@ -2,15 +2,12 @@ import { defineConfig } from 'vite'
 import * as path from 'path'
 import reactRefresh from '@vitejs/plugin-react-refresh';
 import mdx from 'vite-plugin-mdx'
-import pages, {
-  PageStrategy, FileHandler, File,
-  extractStaticData,
-} from 'vite-plugin-react-pages'
+import pages from 'vite-plugin-react-pages'
 
 export default defineConfig({
   plugins: [
     reactRefresh(),
-    mdx(),
+    mdx( /* options */ ),
     pages({
       pagesDir: path.join(__dirname, 'src/pages'),
     }),

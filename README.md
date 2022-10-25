@@ -20,4 +20,3 @@ Edit `pages/page1$.tsx` or other source files, the playground will inflect your 
 ---
 
 Checkout [vite-plugin-react-pages](https://github.com/vitejs/vite-plugin-react-pages) for more info.
-# docs

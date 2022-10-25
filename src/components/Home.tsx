@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Button from '../components/Button';
+import Button from './Button';
 
 const size: String = '100%'
 
@@ -14,6 +14,7 @@ const divStyle: Object = {
 }
 
 export const Home = () => {
+
     return (
         <div style={divStyle}>
             <div style={{ display: 'flex', flexDirection: 'column', justifyContent: "center", alignItems: "center" }}>
