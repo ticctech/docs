@@ -1,83 +1,89 @@
-import React, { FormEventHandler, forwardRef } from 'react';
+import React, { forwardRef } from 'react';
 
-import { Link } from 'react-router-dom';
+import { createUseStyles } from 'react-jss'
+import clsx from 'clsx';
+
+import { Link, LinkProps } from 'react-router-dom';
 
 
-type ButtonProps = {
-    variant?: String
-    color?: String
-    children: String
-    href?: string
-}
+const primaryColor: string = '#156999';
 
-const Button = (props: ButtonProps) => {
-    const { variant, color, href } = props;
-
-    const defaultStyle: Object = {
-        color: color,
-        backgroundColor: '#f5f5f5'
-    }
-    const outlinedStyle: Object = {
-        color: color,
-        backgroundColor: 'auto',
-        border: `1px solid ${color}`
-    }
-    const containedStyle: Object = {
-        color: '#fff',
-        backgroundColor: color === undefined ? '#156999' : color,
-        boxShadow: '0 0 0.2rem rgba(0, 0, 0, 0.3)'
-    }
-
-    switch (variant) {
-        case 'text':
-            return <DefaultButton href={href} style={defaultStyle} {...props} />
-        case 'outlined':
-            return <DefaultButton href={href} style={outlinedStyle} {...props} />
-        case 'contained':
-            return <DefaultButton href={href} style={containedStyle} {...props} />
-        default: return <DefaultButton href={href} style={defaultStyle} {...props} />
-
-    }
-}
-export default Button
-
-type DefaultProps = {
-    href: string
-    children: String
-    color?: String
-    style: Object
-}
-
-const DefaultButton = (props: DefaultProps) => {
-    const { href, children, style } = props;
-
-    const sx: Object = {
-        ...style,
+const useStyles = createUseStyles({
+    button: {
         display: 'inline-block',
         position: 'relative',
         justifyContent: "center",
         alignItems: "center",
         transition: 'background 400ms',
-        padding: '12px',
-        borderRadius: '2px',
-        fontFamily: 'Roboto, sans-serif',
+        borderRadius: '0.125rem',
+        fontFamily: 'sans-serif',
+        fontSize: '0.9rem',
+        fontWeight: 500,
+        letterSpacing: '0.035em',
+        padding: {
+            top: ' 0.8rem',
+            right: '1.3rem',
+            bottom: '0.8rem',
+            left: '1.3rem',
+        },
+    },
+    defaultStyle: {
+        color: primaryColor,
+        '&:hover': {
+            color: '#003f6b',
+            backgroundColor: '#f5f5f5',
+        }
+    },
+    outlinedStyle: {
+        color: primaryColor,
+        backgroundColor: 'auto',
+        border: `1px solid #156999`,
+        '&:hover': {
+            color: '#003f6b',
+        }
+    },
+    containedStyle: {
+        color: '#fff',
+        backgroundColor: primaryColor,
+        boxShadow: '0 0 0.2rem rgba(0, 0, 0, 0.3)',
+        '&:hover': {
+            backgroundColor: '#003f6b',
+            color: '#fff'
+        }
     }
+})
 
-    return (
-        <ActionLink to={href}>
-            <div style={sx}>
-                {children}
-            </div>
-        </ActionLink>
-    )
+type ButtonProps = {
+    variant?: String
+    children: String
+    href?: string
+    style?: Object;
 }
 
-type ActionProps = {
-    to: string
-    children: React.ReactNode | any
+const Button = (props: ButtonProps) => {
+    const { variant, href } = props;
+    const classes = useStyles();
+
+    switch (variant) {
+        case 'text':
+            return <ActionLink to={href} className={clsx(classes.defaultStyle, classes.button)} {...props} />
+        case 'outlined':
+            return <ActionLink to={href} className={clsx(classes.outlinedStyle, classes.button)} {...props} />
+        case 'contained':
+            return <ActionLink className={clsx(classes.containedStyle, classes.button)} to={href}   {...props} />
+        default: return <ActionLink to={href} className={clsx(classes.defaultStyle, classes.button)} {...props} />
+
+    }
+}
+export default Button
+
+interface ActionProps extends LinkProps {
+    to: string;
+    className: string;
+    children: LinkProps<React.ReactNode>['children'];
 }
 
-const ActionLink = forwardRef((props: ActionProps, ref: FormEventHandler) => {
+const ActionLink = forwardRef((props: ActionProps, ref: React.FormEventHandler<Element>) => {
     const { to } = props;
     if (!to.startsWith("/")) {
         return <a ref={ref} target="_blank" rel="noopener" href={to} {...props} />;

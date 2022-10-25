@@ -9,7 +9,8 @@ const divStyle: Object = {
     justifyContent: "center",
     alignItems: "center",
     width: size,
-    height: size
+    height: size,
+    paddingTop: '1rem',
 }
 
 export const Home = () => {
@@ -17,9 +18,10 @@ export const Home = () => {
         <div style={divStyle}>
             <div style={{ display: 'flex', flexDirection: 'column', justifyContent: "center", alignItems: "center" }}>
                 <h1>Welcome to ticc's documentation</h1>
+                <h4>Here you will find instructions on how the Ticc Amlify app works</h4>
                 <div style={divStyle}>
-                    <Button variant="contained" href={"/architecture"}>Get started</Button>
-                    <Button variant="outlined" color={"#156999"} href={"https://github.com/ticctech"}>Open Github</Button>
+                    <Button style={{ marginRight: 10 }} variant="contained" href={"/architecture"}>Get started</Button>
+                    <Button href={"https://github.com/ticctech"}>Open Github</Button>
                 </div>
             </div>
         </div >

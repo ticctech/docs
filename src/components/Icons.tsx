@@ -9,6 +9,14 @@ const divStyle: Object = {
 }
 const imgStyle: Object = { width: 50, height: 'auto' }
 
+export const ErrorIcon = () => {
+    return (
+        <div style={divStyle}>
+            <img style={imgStyle} src={logo} alt="logo" />
+        </div>
+    )
+}
+
 export const Logo = () => {
     return (
         <div style={divStyle}>

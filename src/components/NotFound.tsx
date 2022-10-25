@@ -17,8 +17,8 @@ const NotFound = () => {
     return (
         <div style={divStyle}>
             <h1>404</h1>
-            <h2>Page not found</h2>
-            <Button variant="contained" color="#156999" href="/">
+            <h2>Error Page not found</h2>
+            <Button variant="contained" href="/">
                 Return Home
             </Button>
         </div>
