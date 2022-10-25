@@ -7,18 +7,18 @@ import pages from 'vite-plugin-react-pages'
 export default defineConfig({
   plugins: [
     reactRefresh(),
-    mdx( /* options */ ),
+    mdx( /* options */),
     pages({
       pagesDir: path.join(__dirname, 'src/pages'),
     }),
   ],
   server: {
     host: true,
-    port: 3000
+    port: 3001
   },
   preview: {
     host: true,
-    port: 3000
+    port: 3001
   },
   resolve: {
     // eslint-disable-next-line no-undef

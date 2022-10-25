@@ -49,7 +49,7 @@ const useStyles = createUseStyles({
     containedStyle: {
         color: '#fff',
         backgroundColor: primaryColor,
-        boxShadow: '0 0 0.2rem rgba(0, 0, 0, 0.3)',
+        boxShadow: '0 0 0.4rem rgba(0, 0, 0, 0.3)',
         '&:hover': {
             backgroundColor: '#003f6b',
             color: '#fff',
@@ -93,5 +93,5 @@ const ActionLink = (props: ActionProps) => {
     if (!to.startsWith("/")) {
         return <a style={{ textDecoration: 'none', color: primaryColor }} href={to} {...props} />;
     }
-    return <button onClick={() => history.push(to)}  {...props} />;
+    return <button onClick={() => history.push(to)} {...props} />;
 }
