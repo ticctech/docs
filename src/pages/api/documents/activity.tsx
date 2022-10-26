@@ -1,8 +1,6 @@
+import React from "react";
 
-
-import React from 'react';
-import Swagger from '../../../components/Swagger';
-
+import Swagger from '../../../components/Swagger'
 import ActWorkflow from "../activity.swagger.json";
 
 export const Activity = () => {

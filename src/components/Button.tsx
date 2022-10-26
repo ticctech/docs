@@ -73,27 +73,28 @@ const Button = (props: ButtonProps) => {
 
     switch (variant) {
         case 'text':
-            return <ActionLink to={href} className={clsx(classes.defaultStyle, classes.button)} {...props} />
+            return <ActionLink href={href} className={clsx(classes.defaultStyle, classes.button)} {...props} />
         case 'outlined':
-            return <ActionLink to={href} className={clsx(classes.outlinedStyle, classes.button)} {...props} />
+            return <ActionLink href={href} className={clsx(classes.outlinedStyle, classes.button)} {...props} />
         case 'contained':
-            return <ActionLink to={href} className={clsx(classes.containedStyle, classes.button)}   {...props} />
-        default: return <ActionLink to={href} className={clsx(classes.defaultStyle, classes.button)} {...props} />
+            return <ActionLink href={href} className={clsx(classes.containedStyle, classes.button)}   {...props} />
+        default: return <ActionLink href={href} className={clsx(classes.defaultStyle, classes.button)} {...props} />
     }
 }
 export default Button;
 
 interface ActionProps {
-    to: string;
+    href: string;
     className: string;
     children: React.ReactNode;
 }
 
 const ActionLink: Function = (props: ActionProps) => {
+    const { href } = props;
     const history = useHistory();
-    const { to } = props;
-    if (!to.startsWith("/")) {
-        return <a style={{ textDecoration: 'none', color: primaryColor }} href={to} {...props} />;
+
+    if (!href.startsWith("/")) {
+        return <a style={{ textDecoration: 'none', color: primaryColor }} href={href} {...props} />;
     }
-    return <button onClick={() => history.push(to)} {...props} />;
+    return <button onClick={() => history.push(href)} {...props} />;
 }
