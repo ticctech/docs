@@ -2,7 +2,12 @@ import { createTheme } from 'vite-pages-theme-doc'
 import NotFound from '../components/NotFound';
 import Logo from '../components/Icons';
 
-const navs: Array<Object> = [
+type options = {
+  label: string;
+  path: string;
+}
+
+const navs: Array<options> = [
   { label: 'Architecture', path: '/architecture' },
   { label: 'Dev', path: '/dev' },
   { label: 'UX', path: '/ux' },
