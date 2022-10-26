@@ -4,6 +4,8 @@ import react from '@vitejs/plugin-react'
 import mdx from 'vite-plugin-mdx'
 import pages, { PageStrategy, FileHandler, File, extractStaticData } from 'vite-plugin-react-pages'
 
+const any: string = '**/*.{md,mdx,js,jsx,ts,tsx}'
+
 export default defineConfig({
   plugins: [
     react(),
@@ -13,7 +15,7 @@ export default defineConfig({
       pageStrategy: new PageStrategy(function findPages(pagesDir, helpers) {
         helpers.watchFiles(
           pagesDir,
-          '**/*.{md,mdx,js,jsx,ts,tsx}',
+          any,
           fileHandler
         )
       }),
@@ -31,6 +33,10 @@ export default defineConfig({
 
 const fileHandler: FileHandler = async (file: File, fileHandlerAPI) => {
   const pagePublicPath = getPagePublicPath(file.relative)
+
+  if (pagePublicPath === '/_theme') {
+    return null
+  }
 
   fileHandlerAPI.addPageData({
     pageId: pagePublicPath,
