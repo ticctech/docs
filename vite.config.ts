@@ -1,15 +1,22 @@
 import { defineConfig } from 'vite'
 import * as path from 'path'
-import reactRefresh from '@vitejs/plugin-react-refresh';
+import react from '@vitejs/plugin-react'
 import mdx from 'vite-plugin-mdx'
-import pages from 'vite-plugin-react-pages'
+import pages, { PageStrategy, FileHandler, File, extractStaticData } from 'vite-plugin-react-pages'
 
 export default defineConfig({
   plugins: [
-    reactRefresh(),
-    mdx( /* options */),
+    react(),
+    mdx(),
     pages({
       pagesDir: path.join(__dirname, 'src/pages'),
+      pageStrategy: new PageStrategy(function findPages(pagesDir, helpers) {
+        helpers.watchFiles(
+          pagesDir,
+          '**/*.{md,mdx,js,jsx,ts,tsx}',
+          fileHandler
+        )
+      }),
     }),
   ],
   server: {
@@ -19,9 +26,34 @@ export default defineConfig({
   preview: {
     host: true,
     port: 3001
-  },
-  resolve: {
-    // eslint-disable-next-line no-undef
-    alias: { '@': path.resolve(__dirname, './src') }
-  },
+  }
 })
+
+const fileHandler: FileHandler = async (file: File, fileHandlerAPI) => {
+  const pagePublicPath = getPagePublicPath(file.relative)
+
+  fileHandlerAPI.addPageData({
+    pageId: pagePublicPath,
+    dataPath: file.path,
+    staticData: await extractStaticData(file),
+  })
+}
+
+const getPagePublicPath = (relativePageFilePath: string) => {
+  var pagePublicPath: string;
+
+  const regex: RegExp = /\.(md|mdx|js|jsx|ts|tsx)$/;
+  const indexRegex: RegExp = /index\.(md|mdx|js|jsx|ts|tsx)$/;
+
+  if (relativePageFilePath.match(regex)) {
+    pagePublicPath = relativePageFilePath.replace(regex, '')
+
+  }
+  if (relativePageFilePath.match(indexRegex)) {
+    pagePublicPath = relativePageFilePath.replace(indexRegex, '')
+  }
+
+  pagePublicPath = pagePublicPath.replace(/\/$/, '')
+  pagePublicPath = `/${pagePublicPath}`
+  return pagePublicPath
+}
