@@ -12,7 +12,7 @@ const divStyle: Object = {
 const logoStyle: Object = { width: 50, height: 'auto' }
 const errStyle: Object = { width: 100, height: 'auto' }
 
-export const ErrorIcon = () => {
+export const ErrorIcon: Function = () => {
     return (
         <div style={divStyle}>
             <img style={errStyle} src={error} alt="logo" />
@@ -20,7 +20,7 @@ export const ErrorIcon = () => {
     )
 }
 
-export const Logo = () => {
+export const Logo: Element = () => {
     return (
         <div style={divStyle}>
             <img style={logoStyle} src={logo} alt="" />

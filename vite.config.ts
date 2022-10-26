@@ -32,7 +32,7 @@ export default defineConfig({
 })
 
 const fileHandler: FileHandler = async (file: File, fileHandlerAPI) => {
-  const pagePublicPath = getPagePublicPath(file.relative)
+  const pagePublicPath: string = getPagePublicPath(file.relative)
 
   if (pagePublicPath === '/_theme') {
     return null

@@ -60,7 +60,7 @@ const useStyles = createUseStyles({
     }
 })
 
-type ButtonProps = {
+interface ButtonProps {
     variant?: String
     children: String
     href: string
@@ -81,7 +81,7 @@ const Button = (props: ButtonProps) => {
         default: return <ActionLink to={href} className={clsx(classes.defaultStyle, classes.button)} {...props} />
     }
 }
-export default Button
+export default Button;
 
 interface ActionProps {
     to: string;
@@ -89,7 +89,7 @@ interface ActionProps {
     children: React.ReactNode;
 }
 
-const ActionLink = (props: ActionProps) => {
+const ActionLink: Function = (props: ActionProps) => {
     const history = useHistory();
     const { to } = props;
     if (!to.startsWith("/")) {
