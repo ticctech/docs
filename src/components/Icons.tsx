@@ -24,7 +24,7 @@ export const Logo: Element = () => {
     return (
         <div style={divStyle}>
             <img style={logoStyle} src={logo} alt="" />
-            <h3 style={{ marginLeft: 8 }}>Documentation</h3>
+            <h3 style={{ marginLeft: 8 }}>Amlify Documentation</h3>
         </div>
     )
 }

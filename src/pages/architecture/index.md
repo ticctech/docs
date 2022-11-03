@@ -5,6 +5,8 @@ title: Introduction
 
 # Architecture
 
+## Introduction
+
 The Avid platform is built using [cloud-native](https://github.com/cncf/toc/blob/main/DEFINITION.md) techniques. We use such things as containers, service meshes, microservices, immutable infrastructure, and declarative APIs to deliver a resilient, manageable, and observable platform.
 
 At its simplest, the Avid platform is architectured as a set of micro frontends, Kubernetes workloads, and third-party services.

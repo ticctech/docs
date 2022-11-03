@@ -9,7 +9,7 @@ type options = {
 
 const navs: Array<options> = [
   { label: 'Architecture', path: '/architecture' },
-  { label: 'Dev', path: '/dev' },
+  { label: 'Development', path: '/dev' },
   { label: 'UX', path: '/ux' },
   { label: 'API', path: '/api' },
 ]

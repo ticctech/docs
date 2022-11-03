@@ -1,11 +1,11 @@
-## vite-pages app starter
+## Amlify Developer Documentation
 
-This is a demo project for [vite-plugin-react-pages](https://github.com/vitejs/vite-plugin-react-pages).
-This project demonstrate how to develop a React app using [vite-plugin-react-pages](https://github.com/vitejs/vite-plugin-react-pages) as framework.
+This web application uses [vite-plugin-react-pages](https://github.com/vitejs/vite-plugin-react-pages) to provide
+information for the Amlify internal development team.
 
-You can run this demo in [StackBlitz](https://stackblitz.com/fork/github/vitejs/vite-plugin-react-pages/tree/main/packages/create-project/template-app?file=README.md&terminal=dev), entirely in your browser!
+Add documentation as markdown files inside the pages folder. Commit and push to the main branch to publish changes.
 
-# getting started
+# Getting Started
 
 Run `yarn` to install all dependencies
 
@@ -18,5 +18,3 @@ Edit `pages/page1$.tsx` or other source files, the playground will inflect your 
 `npm run ssr` The app are built into a static site (Static-Site Generation) and served.
 
 ---
-
-Checkout [vite-plugin-react-pages](https://github.com/vitejs/vite-plugin-react-pages) for more info.
