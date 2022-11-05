@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Getting Started](README.md)
+* [Overview](README.md)
 * [src](src/README.md)
   * [pages](src/pages/README.md)
     * [Home](src/pages/index.mdx)
