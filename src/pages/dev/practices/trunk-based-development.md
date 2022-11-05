@@ -1,5 +1,4 @@
 ---
-sidebar_position: 2
 description: Merging small, frequent updates to the core “trunk” or main branch.
 ---
 

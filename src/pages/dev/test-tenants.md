@@ -1,8 +1,3 @@
----
-sidebar_position: 2
-title: Test Tenants
----
-
 # Test Tenants
 
 We have 3 tenants (or organisations) used for testing and demo-ing the application. Each tenant serves a different purpose with different expectations of its data.

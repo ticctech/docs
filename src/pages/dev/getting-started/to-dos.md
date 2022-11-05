@@ -1,5 +1,4 @@
 ---
-sidebar_position: 4
 description: Things to do to complete getting started docs
 ---
 

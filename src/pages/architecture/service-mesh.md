@@ -1,13 +1,8 @@
----
-sidebar_position: 6
-title: Why it is important to us and how we use it
----
-
 # Service Mesh
 
 We use Istio service mesh to secure access to our microservices. It transparently provides security, routing, load-balancing and can even aid with observability.
 
-![](/img/assets/ServiceMesh.jpg)
+![](../../../img/assets/ServiceMesh.jpg)
 
 Access to every service is sufficiently secured that the service can expose itself directly outside the mesh — in principle, a trustless architecture.
 

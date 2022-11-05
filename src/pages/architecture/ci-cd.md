@@ -1,8 +1,3 @@
----
-sidebar_position: 2
-title: CI/CD Pipelines
----
-
 # CI/CD Pipelines
 
 Avid's CI/CD pipelines are an intrinsic part of the platform. The ability to continuously deliver improvements is integral to the healthy operation of the system.
@@ -13,8 +8,8 @@ Once deployed, changes can be safely reviewed and gradually released to a wider 
 
 ## Service pipeline
 
-![](/img/assets/ServicesPipeline.jpg)
+![](../../../img/assets/ServicesPipeline.jpg)
 
 ## Frontend pipeline
 
-![](/img/assets/FrontendPipeline.jpg)
+![](../../../img/assets/FrontendPipeline.jpg)

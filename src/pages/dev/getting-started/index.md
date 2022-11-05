@@ -1,8 +1,3 @@
----
-sidebar_position: 1
-title: Overview
----
-
 # Overview
 
 We support a total of three environments — local, staging, and production. Each environment serves a specific need and is used in a specific way.
@@ -15,7 +10,7 @@ Developers work on a single component at a time — making, testing, and deployi
 
 Getting started is as simple as cloning a single component from GitHub. There is no need to run any dependent components locally.
 
-![](/img/assets/LocalDevelopment.jpg)
+![](../../../../img/assets/LocalDevelopment.jpg)
 
 ### Staging
 
@@ -27,7 +22,7 @@ When developing a frontend component it will usually load any dependent micro fr
 
 Developers require access to a number of systems to debug, test, and deploy changes. Before getting started, confirm you can access each of the following:
 
-* _Owner_ access to [Avid GitHub repos](https://github.com/avidaml)&#x20;
+* _Owner_ access to [Avid GitHub repos](https://github.com/avidaml)
 * Staging Azure Kubernetes Service - Azure login
 * [Avid pipelines](https://app.circleci.com/pipelines/github/avidaml) in CircleCI - use GitHub login
 * Avid 1Password _Development_ directory

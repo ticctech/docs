@@ -1,15 +1,14 @@
 ---
-sidebar_position: 3
 description: Setting up for back-end service development
 ---
 
 # Back-end
 
-The Avid back end is largely composed of Go-based microservices that run on Kubernetes and a [service mesh](/docs/architecture/service-mesh). This [architectural overview](/docs/architecture/) should help you get acquainted with the most significant components of the system.
+The Avid back end is largely composed of Go-based microservices that run on Kubernetes and a [service mesh](../../../../docs/architecture/service-mesh/). This [architectural overview](../../../../docs/architecture/) should help you get acquainted with the most significant components of the system.
 
 If you are new to Go please read (at a minimum) these articles on crafting idiomatic Go:
 
-* [How to Write Go Code](https://golang.org/doc/code)&#x20;
+* [How to Write Go Code](https://golang.org/doc/code)
 * [Effective Go](https://golang.org/doc/effective\_go.html)
 * [Idiomatic Go](https://dmitri.shuralyov.com/idiomatic-go)
 
@@ -138,8 +137,7 @@ brew install buf
 
 Add an entry for Avid's Buf repository to your `.netrc` file so that Buf can push proto builds to our Buf repo:
 
-> machine buf.build password `Buf API key`
-> machine go.buf.build login avid-aml password `Buf API key`
+> machine buf.build password `Buf API key` machine go.buf.build login avid-aml password `Buf API key`
 
 #### protoc-gen-xxx components
 

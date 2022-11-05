@@ -1,5 +1,4 @@
 ---
-sidebar_position: 3
 description: >-
   Deploy and test software in production before releasing — in a controlled
   manner — to users

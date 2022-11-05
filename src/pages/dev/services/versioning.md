@@ -1,5 +1,4 @@
 ---
-sidebar_position: 3
 description: Versioning components/releases
 ---
 

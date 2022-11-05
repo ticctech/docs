@@ -1,15 +1,10 @@
----
-sidebar_position: 3
-title: Using Feature Flags
----
-
 # Using Feature Flags
 
 Fully committing to continuous delivery requires the ability to deliver small changes often (in other words continuously). This means reducing the number of places where new code is held up in its journey to production.
 
 One of the biggest bottlenecks under a more traditional regime is manual testing in a dedicated test environment. Under continuous delivery, the pipeline effectively becomes blocked and changes start to back up, releases become more serious events and need careful orchestration.
 
-Our approach is to perform manual testing in production — [testing in production](/docs/dev/practices/test-in-production). To do so safely we use feature flags to prevent untested changes from being released to end-users.
+Our approach is to perform manual testing in production — [testing in production](../../../docs/dev/practices/test-in-production/). To do so safely we use feature flags to prevent untested changes from being released to end-users.
 
 ## Best practices
 

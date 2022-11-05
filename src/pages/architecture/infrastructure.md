@@ -1,8 +1,3 @@
----
-sidebar_position: 4
-title: Infrastructure
----
-
 # Infrastructure
 
 The bulk of our platform is, in one way or another, hosted on Azure. Where practical, third-party services are also hosted on Azure (MongoDB, Elacticsearch) and co-located in the same region.
@@ -11,7 +6,7 @@ By dint of its [cloud-native](https://www.cncf.io/about/faq/) nature, the platfo
 
 ## Core components
 
-![](/img/assets/Infrastructure.jpg)
+![](../../../img/assets/Infrastructure.jpg)
 
 The heart of Avid's infrastructure is [Azure Kubernetes Service](https://azure.microsoft.com/en-in/services/kubernetes-service/). It hosts backend microservices, restarts failed services, and auto-scales to meet demand.
 

@@ -1,5 +1,4 @@
 ---
-sidebar_position: 1
 description: When it's OK to use modals (popups)
 ---
 

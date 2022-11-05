@@ -1,15 +1,10 @@
----
-sidebar_position: 5
-title: Observability
----
-
 # Observability
 
 Adopting cloud-native services means observability practices and tooling can focus on application performance management rather than infrastructure management.
 
 The telemetry and tooling employed are designed to deliver the context needed to ensure optimum application performance and take intelligent actions when required.
 
-![](/img/assets/Observability.jpg)
+![](../../../img/assets/Observability.jpg)
 
 ## Telemetry
 

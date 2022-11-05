@@ -1,5 +1,4 @@
 ---
-sidebar_position: 4
 description: Anybody can safely deliver working software within a day of starting.
 ---
 

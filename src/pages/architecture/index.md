@@ -1,8 +1,3 @@
----
-sidebar_position: 3
-title: Introduction
----
-
 # Architecture
 
 ## Introduction
@@ -11,7 +6,7 @@ The Avid platform is built using [cloud-native](https://github.com/cncf/toc/blob
 
 At its simplest, the Avid platform is architectured as a set of micro frontends, Kubernetes workloads, and third-party services.
 
-![](/img/assets/Overview.jpg)
+![](../../../img/assets/Overview.jpg)
 
 While our component-based approach supports mixed languages, current frontends are written in React and backend services in Go.
 

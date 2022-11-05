@@ -1,5 +1,4 @@
 ---
-sidebar_position: 1
 description: Packages and structures common to all services
 ---
 
