@@ -6,7 +6,7 @@ description: Modify your first component
 
 In this tutorial, you will be changing the `mock-data` service, deploying the change and reviewing the change behind its feature flag in production.
 
-Before you start, make sure you have [set up](../../../../../docs/dev/getting-started/back-end/) your local development environment.
+Before you start, make sure you have [set up](../../../docs/dev/getting-started/back-end/) your local development environment.
 
 ### 1. Clone service
 
@@ -18,11 +18,11 @@ git clone https://github.com/avidaml/mock-data.git
 
 Dynamically (in code) add a new entity to the list of mock entities. While mock entities are initially loaded from a JSON file, you will need to add the entity after loading from JSON so you can apply a feature flag to show or hide the change.
 
-[Show me how](microservice.md)
+[Show me how](../../../src/pages/dev/getting-started/tutorials/microservice.md)
 
 ### 3. Add a feature flag
 
-Wrap your change in a [feature flag](../../../../../docs/dev/feature-flags/) so that the newly added customer will only be visible to you.
+Wrap your change in a [feature flag](../../../docs/dev/feature-flags/) so that the newly added customer will only be visible to you.
 
 ### 4. Step through changes
 
