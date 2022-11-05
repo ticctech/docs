@@ -7,7 +7,7 @@ title: API Gateway
 
 A service mesh supports a more decentralised API and, by extension, API gateways. Because, with service mesh support, each service can expose and control access to its own API, there is no need for centralised API management.
 
-![Envoy proxy as API gateway](../img/structure.png)
+![Envoy proxy as API gateway](../../src/pages/img/structure.png)
 
 The team responsible for a service controls what APIs to expose, authentication, access, and even which protocols they want to support.
 
