@@ -40,5 +40,5 @@
   * [UX/UI Design](ux/index.md)
   * [Modals](ux/modals.md)
 * [API Specification](api-specification/README.md)
+  * [Action API](api-specification/action-api.md)
   * [Auth API](api-specification/auth-api.md)
-* [Action API](action-api.md)
