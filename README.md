@@ -1,5 +1,5 @@
 ---
-description: Getting started
+description: Getting started with development
 ---
 
 # Getting Started
