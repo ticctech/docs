@@ -4,7 +4,7 @@ description: Test
 
 # Auth API
 
-{% swagger src="../.gitbook/assets/auth.swagger.json" path="/v1/roles" method="get" %}
+{% swagger src="../api/auth.swagger.json" path="/v1/roles" method="get" %}
 [auth.swagger.json](<../.gitbook/assets/auth.swagger.json>)
 {% endswagger %}
 
