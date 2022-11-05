@@ -1,4 +1,4 @@
-# action API
+# Action API
 
 {% swagger src="../api/action.swagger.json" path="/v1/roles" method="get" %}
 [action.swagger.json](<../api/action.swagger.json>)
