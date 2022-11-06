@@ -8,11 +8,11 @@
 [action.swagger.json](../api/action.swagger.json)
 {% endswagger %}
 
-{% swagger src="../api/action.swagger.json" path="/v1/{action.id}" method="put" %}
+{% swagger src="../api/action.swagger.json" path="/v1/{action.id}" method="patch" %}
 [action.swagger.json](../api/action.swagger.json)
 {% endswagger %}
 
-{% swagger src="../api/action.swagger.json" path="/v1/{action.id}" method="patch" %}
+{% swagger src="../api/action.swagger.json" path="/v1/{action.id}" method="put" %}
 [action.swagger.json](../api/action.swagger.json)
 {% endswagger %}
 
