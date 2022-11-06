@@ -42,3 +42,4 @@
 * [API Specification](api-specification/README.md)
   * [Action API](api-specification/action-api.md)
   * [Auth API](api-specification/auth-api.md)
+  * [Test](api-specification/test.md)
