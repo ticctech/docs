@@ -21,7 +21,7 @@
     "react-openapi-client": "^0.2.2",
     "react-router-dom": "^5.2.0",
     "swagger-ui-react": "^4.15.1",
-    "vite-plugin-pages": "^0.27.1"
+    "vite-plugin-pages": "^0.28.0"
   },
   "devDependencies": {
     "@mdx-js/mdx": "^1.6.22",
