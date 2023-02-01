@@ -1,6 +1,36 @@
-# Access control for multiple reporting entities
+---
+description: Role-based access control
+---
 
-It is a common for a user that belongs to one tenant and has access to multiple reporting entities. The tenant is the whole company/corporate, and reporting entities could be branches of the company. Take Ray White as example, Ray White would be the tenant, each branch would be the reporting entity.&#x20;
+# Access Control
+
+## Concepts
+
+A user will be associated with one more more tenants (organisations). A tenant will contain one or more AML Reporting Entities, each with their own subset of data resources (entities, checks, etc.).
+
+<img src="../.gitbook/assets/file.excalidraw (4).svg" alt="multiple reporting entities per tenant" class="gitbook-drawing">
+
+&#x20;For example, Ray White New Zealand is an Amlify tenant an each branch a separate AML Reporting Entity.
+
+### Role-based Access
+
+The platform uses roles to determine a user's access to resources. A role can specify _read_ or _write_ access for a resource. If not specified, the default is to _deny_ resource access.
+
+<img src="../.gitbook/assets/file.excalidraw (5).svg" alt="role-based resource access" class="gitbook-drawing">
+
+Roles are established and provisioned at the Reporting Entity level. That is, each Reporting Entity will use roles to determine access to its resources.&#x20;
+
+### Reporting Entity Access
+
+User access to a reporting entity (and thereby, a tenant) is mediated by the role they have been assigned within the Reporting Entity. No role equates to no access.
+
+<img src="../.gitbook/assets/file.excalidraw (6).svg" alt="Reporting Entity access" class="gitbook-drawing">
+
+### Tenant 'Switching' (??)
+
+Is there any need for this?
+
+## Access Scenarios
 
 The solution would handle following scenarios:
 
@@ -11,11 +41,11 @@ Solution:
 
 1. We use auth service to store the accessible reporting entities for a user (add a new property in the collection: user).
 2. We use Ory Keto relationship to specify the relationship and access rules. A sample relationship could be found in [https://github.com/ticctech/auth/blob/main/.keto/multi-reportingEntity.namespace.keto.ts](https://github.com/ticctech/auth/blob/main/.keto/multi-reportingEntity.namespace.keto.ts).
-3. Every request from portal to the service will contain a header of request reporting entity id. The interceptor in grpcsdk will call Keto API to verify if user has access to the resource of the report entity or not.&#x20;
+3. Every request from portal to the service will contain a header of request reporting entity id. The interceptor in grpcsdk will call Keto API to verify if user has access to the resource of the report entity or not.
 
-The design diagram could be found in here: [https://miro.com/app/board/uXjVPtu-jaY=/](https://miro.com/app/board/uXjVPtu-jaY=/)
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
-Implementations:
+## Implementation
 
 Here are change list for the proposed solution:
 
@@ -34,8 +64,4 @@ Here are change list for the proposed solution:
    1. Add reporting entity to existing mongodb data.
    2. Migrate existing Org relationships.&#x20;
 6. Update postman request with reporting entity id.
-
-
-
-
 
