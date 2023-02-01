@@ -12,7 +12,7 @@ Users can be associated with one more more Amlify accounts (tenants). An account
 
 <img src="../.gitbook/assets/file.excalidraw (1).svg" alt="multiple Reporting Entities per tenant" class="gitbook-drawing">
 
-&#x20;For example, Ray White New Zealand is an Amlify tenant an each branch a separate AML Reporting Entity.
+For example, Ray White New Zealand has a single Amlify account with each branch being a separate AML Reporting Entity.
 
 ### Role-based Access
 
