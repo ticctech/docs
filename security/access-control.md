@@ -103,7 +103,24 @@ class Resource implements Namespace {
 
 MongoDB data storage and retrieval...
 
-
+```json
+// Some code
+{
+  "_id": {
+    "$oid": "634fae2095d1a40d6940919a"
+  },
+  "tenantId": "44cbb6d7-8155-48bf-970c-efb6600e8e07",
+  "updatedBy": "30b0c1bf-0f5f-442d-ab0b-f8c820837ae3",
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1672356186008"
+    }
+  },
+  "<data entity>": {
+    ...json
+  }
+}
+```
 
 
 
