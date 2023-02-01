@@ -6,9 +6,11 @@ description: Role-based access control
 
 ## Concepts
 
-Users can be associated with one more more Amlify accounts (tenants). A tenant will contain one or more AML Reporting Entities, each with their own subset of data resources (entities, checks, etc.).
+### Business Unit Hierarchy
 
-<img src="../.gitbook/assets/file.excalidraw.svg" alt="multiple reporting entities per tenant" class="gitbook-drawing">
+Users can be associated with one more more Amlify accounts (tenants). An account can contain one or more AML Reporting Entities, each with their own subset of data resources (entities, checks, etc.).
+
+<img src="../.gitbook/assets/file.excalidraw (1).svg" alt="multiple Reporting Entities per tenant" class="gitbook-drawing">
 
 &#x20;For example, Ray White New Zealand is an Amlify tenant an each branch a separate AML Reporting Entity.
 
