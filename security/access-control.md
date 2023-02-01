@@ -8,7 +8,7 @@ description: Role-based access control
 
 ### Business Unit Hierarchy
 
-Users can be associated with one more more Amlify accounts (tenants). An account can contain one or more AML Reporting Entities, each with their own subset of data resources (entities, checks, etc.).
+The primary organising principle for platform resources and data is an AML Reporting Entity.  For billing purposes, a Reporting Entity belongs to a single account (tenant), with more than one Reporting Entity being able to belong to the same account.&#x20;
 
 <img src="../.gitbook/assets/file.excalidraw (1).svg" alt="multiple Reporting Entities per tenant" class="gitbook-drawing">
 
@@ -27,6 +27,8 @@ Roles are established and provisioned at the Reporting Entity level. That is, ea
 User access to a reporting entity (and thereby, a tenant) is mediated by the role they have been assigned within the Reporting Entity. No role equates to no access.
 
 <img src="../.gitbook/assets/file.excalidraw (6).svg" alt="Reporting Entity access" class="gitbook-drawing">
+
+Users can be associated with multiple tenants simply by being assigned to a role within a Reporting Entity.
 
 ### Tenant 'Switching' (??)
 
