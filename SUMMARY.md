@@ -43,4 +43,4 @@
   * [Action API](api-specification/action-api.md)
   * [Auth API](api-specification/auth-api.md)
 * [Security](security/README.md)
-  * [Access control for multiple reporting entity](security/access-control-for-multiple-reporting-entity.md)
+  * [Access control for multiple reporting entities](security/access-control-for-multiple-reporting-entities.md)

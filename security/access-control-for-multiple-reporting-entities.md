@@ -1,4 +1,4 @@
-# Access control for multiple reporting entity
+# Access control for multiple reporting entities
 
 It is a common for a user that belongs to one tenant and has access to multiple reporting entities. The tenant is the whole company/corporate, and reporting entities could be branches of the company. Take Ray White as example, Ray White would be the tenant, each branch would be the reporting entity.&#x20;
 
