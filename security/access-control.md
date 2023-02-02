@@ -30,7 +30,7 @@ User access to a reporting entity (and thereby, a tenant) is mediated by the rol
 
 Users can be associated with multiple tenants simply by being assigned to a role within a Reporting Entity.
 
-### Tenant 'Switching' (??)
+### Tenant Switching
 
 {% hint style="info" %}
 Is there any need for this?
