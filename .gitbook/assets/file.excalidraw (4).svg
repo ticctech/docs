@@ -1,0 +1,16 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 338.8203125 169.0859375" width="677.640625" height="338.171875">
+  <!-- svg-source:excalidraw -->
+  <!-- payload-type:application/vnd.excalidraw+json --><!-- payload-version:2 --><!-- payload-start -->eyJ2ZXJzaW9uIjoiMSIsImVuY29kaW5nIjoiYnN0cmluZyIsImNvbXByZXNzZWQiOnRydWUsImVuY29kZWQiOiJ4nM1VW2/bIFx1MDAxNH7vr7Dc18r1XHUwMDA1bOhbL5mWh01ts2qapj1cdTAwMTCb2DTUWECapFH+e1x1MDAwMXfBSTNpe9g0XHUwMDFlkDhcdTAwMTe+75zzITYnQVx1MDAxMOp1R8OLIKSrknBWSbJcZs+s/ZlKxURrXFypOyuxkKWLbLTu1MX5Oem6qGZ6KsQ8KsVTn0Y5faKtVibwuzlcdTAwMDfBxu1cdTAwMDMgSUtN2ppTl+BcXFx1MDAxZStDh8bPonWwSYYgwDHOd1x1MDAwMUzdXHUwMDE4NE0r451cdTAwMTGuqPdYU7ia30nyMU5HL2I6uWtGY7FcdTAwMTS5XHUwMDA3nTHOJ3rN+5pI2SzkgJLSUszpV1bpxoJcdTAwMWbYd3lKmJ75LClcdTAwMTZ101Kl9nJER0qm19ZcdTAwMTbHO2vfg4vAW1bmXHUwMDA0MIxyXGJcdTAwMDHMIUhxjlxuuHO7XHUwMDBiMI5QlqRZUeBcdTAwMDN3z+xacCEts9PYLc9tSsp5bVxittUuRkvSqo5IMzBcdTAwMWa3/FlzkUQ5XHUwMDAw0KB5kIayutHWXHUwMDBicFx1MDAxNCOIsyFcdTAwMDPqZlx1MDAwMVxunCQgXHUwMDFmlGphu3HlRPHjsJVccpHdW8tCZVx1MDAwZlx1MDAwM8qW7WigKJ+86CrSjz7JXHUwMDBimGKIilwiSzwkZ+3cONtcdTAwMDXn3ibKuVeLs27PjotU05U+pk9Q/FKfKEEoXHUwMDAxXHUwMDAwod9cdTAwMTbotbh9fvkmm9n941VcctbJzcP9w+P/LtBcdTAwMWOBXGJcdTAwMTSwyHHsXHUwMDA0ivb0mWZxVFx1MDAxOMkk6d/XZ1x1MDAxNr+XZfpOjVx0NjNJIUL/Wo5cdTAwMDCCP5GjXHUwMDFmu2j1hL3YzqfxnvVcdTAwMDN5Yny9NzmnU8P08nZcdTAwMWN8XCItqalcdTAwMWN2VFFcdTAwMDPcq3Mv5ZKz2so55HS2r3PNzDewc2sxKL80XHUwMDE0iLlOjqvDUoRkNWtcdP9yhE7/zszuulx1MDAxNZpfY6JNr0xY/+rMOFj1VrC/NHxmdHn1Xlx1MDAxMqczt+yt7u3aV0LtMDbbk+0rr1x1MDAwYsBOIn0=<!-- payload-end -->
+  <defs>
+    <style>
+      @font-face {
+        font-family: "Virgil";
+        src: url("https://unpkg.com/@excalidraw/excalidraw@0.13.0/dist/excalidraw-assets/Virgil.woff2");
+      }
+      @font-face {
+        font-family: "Cascadia";
+        src: url("https://unpkg.com/@excalidraw/excalidraw@0.13.0/dist/excalidraw-assets/Cascadia.woff2");
+      }
+    </style>
+  </defs>
+  <rect x="0" y="0" width="338.8203125" height="169.0859375" fill="#ffffff"/><g stroke-linecap="round" transform="translate(10 10) rotate(0 85.822265625 74.54296875)"><path d="M-0.15 1.27 C52.36 -1.84, 104.52 0.56, 171.23 1.31 M-0.85 -0.31 C55.69 0.74, 111.03 0, 172.51 -0.96 M172.87 0 C170.92 42.96, 172.29 83.79, 172.7 148.97 M171.47 -0.74 C173.34 43.57, 172.61 88.57, 172.07 148.25 M172.33 150.09 C120.46 151.58, 66.17 148.72, -1.29 149.91 M171.2 149.42 C132.46 149.96, 94.45 149.26, -0.37 149.88 M-0.63 148.61 C0.67 104.11, -0.59 53.52, -1.73 -1.96 M0.94 149.39 C-0.49 93.05, -2.11 36.13, 0.66 0.11" stroke="#000000" stroke-width="1" fill="none"/></g><g transform="translate(198.8203125 40.921875) rotate(0 65 12.5)"><text x="0" y="18" font-family="Virgil, Segoe UI Emoji" font-size="20px" fill="#000000" text-anchor="start" style="white-space: pre;" direction="ltr">API Manager</text></g></svg>

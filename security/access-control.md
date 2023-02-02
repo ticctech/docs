@@ -43,9 +43,9 @@ The solution would handle following scenarios:
 
 ## Implementation
 
+Key components involved in controlling access to resources.
 
-
-<img src="../.gitbook/assets/file.excalidraw (3).svg" alt="" class="gitbook-drawing">
+<img src="../.gitbook/assets/file.excalidraw.svg" alt="" class="gitbook-drawing">
 
 ### API Manager
 
