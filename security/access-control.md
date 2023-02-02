@@ -52,7 +52,7 @@ Key components involved in controlling access to resources.
 API manager configuration required to translate identity information to headers needed to support access control in subsequent layers...
 
 {% hint style="warning" %}
-Need a way to resolve tenantID for Reporting Entity. Should we cache or query MongoDB?
+Need a way to resolve tenantID for Reporting Entity.
 {% endhint %}
 
 ### Keto Permissions
