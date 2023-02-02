@@ -38,10 +38,14 @@ Is there any need for this?
 
 The solution would handle following scenarios:
 
-1. If I am an admin/teller of a reporting entity, I should be able to write/read the resources of that reporting entity.&#x20;
-2. If I am an admin/teller of a tenant, I should be able to write/read the resources of all the reporting entities of that tenant.&#x20;
+1. As **admin** of a reporting entity, I should be able to create, edit, and delete resources of the reporting entity.
+2. As **teller** of a reporting entity, I should be able to read, create, edit, and delete selected resources of the reporting entity.&#x20;
 
 ## Implementation
+
+
+
+<img src="../.gitbook/assets/file.excalidraw (3).svg" alt="" class="gitbook-drawing">
 
 ### API Manager
 
