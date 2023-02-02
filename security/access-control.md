@@ -32,7 +32,9 @@ Users can be associated with multiple tenants simply by being assigned to a role
 
 ### Tenant 'Switching' (??)
 
+{% hint style="info" %}
 Is there any need for this?
+{% endhint %}
 
 ## Access Scenarios
 
