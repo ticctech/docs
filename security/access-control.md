@@ -10,7 +10,7 @@ description: Role-based access control
 
 The primary organising principle for platform resources and data is an AML Reporting Entity.  For billing purposes, a Reporting Entity belongs to a single account (tenant), with more than one Reporting Entity being able to belong to the same account.&#x20;
 
-<img src="../.gitbook/assets/file.excalidraw (1).svg" alt="multiple Reporting Entities per tenant" class="gitbook-drawing">
+<img src="../.gitbook/assets/file.excalidraw (1) (2).svg" alt="multiple Reporting Entities per tenant" class="gitbook-drawing">
 
 For example, Ray White New Zealand has a single Amlify account with each branch being a separate AML Reporting Entity.
 
@@ -45,7 +45,7 @@ The solution would handle following scenarios:
 
 Key components involved in controlling access to resources.
 
-<img src="../.gitbook/assets/file.excalidraw (4).svg" alt="" class="gitbook-drawing">
+<img src="../.gitbook/assets/file.excalidraw.svg" alt="" class="gitbook-drawing">
 
 ### API Manager
 
