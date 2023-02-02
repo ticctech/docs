@@ -51,8 +51,8 @@ Key components involved in controlling access to resources.
 
 API manager configuration required to translate identity information to headers needed to support access control in subsequent layers...
 
-{% hint style="warning" %}
-We need a means to inject tenantID and reportingEntityID into request headers
+{% hint style="danger" %}
+How do we inject tenantID and reportingEntityID into request headers?
 {% endhint %}
 
 ### Keto Permissions
