@@ -2,7 +2,7 @@
 description: Setting up development environment
 ---
 
-# Setup
+# Getting Started
 
 ## Quick Start
 
