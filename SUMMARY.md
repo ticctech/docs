@@ -14,7 +14,7 @@
   * [Test Tenants](dev/test-tenants.md)
   * [aml-cft-101](dev/aml-cft-101/README.md)
     * [Know Your Customer (KYC)](dev/aml-cft-101/index.md)
-  * [getting-started](dev/getting-started/README.md)
+  * [Getting Started](dev/getting-started/README.md)
     * [Back-end](dev/getting-started/back-end.md)
     * [Front-end](dev/getting-started/front-end.md)
     * [Overview](dev/getting-started/index.md)
