@@ -23,7 +23,7 @@
       * [Tutorials](dev/getting-started/tutorials/readmeusd.md)
       * [micro-frontend$](dev/getting-started/tutorials/micro-frontendusd.md)
       * [Microservice](dev/getting-started/tutorials/microserviceusd.md)
-  * [practices](dev/practices/README.md)
+  * [Practices](dev/practices/README.md)
     * [Defer Optimisation](dev/practices/defer-optimisation.md)
     * [Overview](dev/practices/index.md)
     * [Micro-everything](dev/practices/micro-everything.md)
