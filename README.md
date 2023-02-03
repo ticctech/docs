@@ -1,8 +1,14 @@
 ---
-description: Getting started with development
+description: Setting up development environment
 ---
 
 # Getting Started
+
+## Backend Development
+
+
+
+## Frontend Development
 
 This web application uses [vite-plugin-react-pages](https://github.com/vitejs/vite-plugin-react-pages) to provide information for the Amlify internal development team.
 
