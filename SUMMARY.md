@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Getting Started](README.md)
+* [Quick Start](README.md)
 * [Architecture](architecture/README.md)
   * [API Gateway](architecture/api-gateway.md)
   * [CI/CD Pipelines](architecture/ci-cd.md)
