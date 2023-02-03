@@ -1,10 +1,11 @@
 # Table of contents
 
 * [Setup](README.md)
+  * [Tools](dev/tools.md)
   * [Back-end](dev/getting-started/back-end.md)
   * [Front-end](dev/getting-started/front-end.md)
   * [To Dos](dev/getting-started/to-dos.md)
-  * [Environments](dev/getting-started/index.md)
+  * [Systems](dev/getting-started/index.md)
   * [Test Tenants](dev/test-tenants.md)
 * [Architecture](architecture/README.md)
   * [API Gateway](architecture/api-gateway.md)

@@ -1,4 +1,8 @@
-# Overview
+---
+description: Third-party platform dependencies
+---
+
+# Systems
 
 We support a total of three environments — local, staging, and production. Each environment serves a specific need and is used in a specific way.
 
@@ -9,8 +13,6 @@ A local environment is the one created (following this guide) locally for the pu
 Developers work on a single component at a time — making, testing, and deploying changes independently of any other component. Each component is almost entirely self-contained. It has mocks of Avid services it depends on and connects to any external services it requires (such as a data source).
 
 Getting started is as simple as cloning a single component from GitHub. There is no need to run any dependent components locally.
-
-![](../../img/assets/LocalDevelopment.jpg)
 
 ### Staging
 
