@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Getting Started](README.md)
+* [Setup](README.md)
   * [Back-end](dev/getting-started/back-end.md)
   * [Front-end](dev/getting-started/front-end.md)
   * [To Dos](dev/getting-started/to-dos.md)

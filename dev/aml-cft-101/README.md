@@ -1,2 +1,2 @@
-# AML/CFT 101
+# aml-cft-101
 
