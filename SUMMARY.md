@@ -29,7 +29,7 @@
     * [Micro-everything](dev/practices/micro-everything.md)
     * [Defer Optimisation](dev/practices/defer-optimisation.md)
     * [Testing in Production](dev/practices/test-in-production.md)
-  * [services](dev/services/README.md)
+  * [Services](dev/services/README.md)
     * [Anatomy](dev/services/anatomy.md)
     * [APIs](dev/services/apis.md)
     * [Debugging](dev/services/debugging.md)
