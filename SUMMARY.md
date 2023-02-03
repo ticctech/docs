@@ -12,7 +12,7 @@
   * [Using Feature Flags](dev/feature-flags.md)
   * [Contributors](dev/index.md)
   * [Test Tenants](dev/test-tenants.md)
-  * [aml-cft-101](dev/aml-cft-101/README.md)
+  * [AML/CFT 101](dev/aml-cft-101/README.md)
     * [Know Your Customer (KYC)](dev/aml-cft-101/index.md)
   * [Getting Started](dev/getting-started/README.md)
     * [Back-end](dev/getting-started/back-end.md)
