@@ -32,5 +32,3 @@
   * [Modals](ux/modals.md)
 * [Security](security/README.md)
   * [Access Control](security/access-control.md)
-* [AML/CFT 101](dev/aml-cft-101/README.md)
-  * [Know Your Customer (KYC)](dev/aml-cft-101/index.md)
