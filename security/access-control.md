@@ -12,7 +12,7 @@ The primary organising principle for platform resources and data is an AML Repor
 
 <img src="../.gitbook/assets/file.excalidraw (1) (2).svg" alt="multiple Reporting Entities per tenant" class="gitbook-drawing">
 
-For example, Ray White New Zealand has a single Amlify account with each branch being a separate AML Reporting Entity.
+For example, Ray White New Zealand has a single Amlify account with each branch a separate AML Reporting Entity.
 
 ### Role-based Access
 
