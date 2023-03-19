@@ -6,23 +6,24 @@ description: Setting up development environment
 
 ## Quick Start
 
-### VS Code
+Install Go - [https://go.dev/doc/install](https://go.dev/doc/install)
 
-At a minimum, we use the following extensions in VS Code:\
+Install VS Code - [https://code.visualstudio.com/Download](https://code.visualstudio.com/Download)
 
+Install Buf CLI - [https://docs.buf.build/installation](https://docs.buf.build/installation)
+
+### Configuration
+
+#### VS Code
+
+At a minimum, we use the following extensions in VS Code:
 
 * Buf
 * Dapr
 * Go
 * vscode-proto3
 
-### Go
-
-Install Go
-
-Install VS Code
-
-Install Buf CLI
+#### Go
 
 Configure Go to use private GitHub repos.
 
@@ -36,7 +37,7 @@ Save private repo credentials locally to `.netrc`.&#x20;
 echo "machine github.com login <GitHub username> password <GitHub PAT>" >> ~/.netrc
 ```
 
-### Buf
+#### Buf
 
 ```bash
 echo "machine go.buf.build login <Buf username> password <Buf PAT>" >> ~/.netrc
