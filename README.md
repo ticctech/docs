@@ -6,7 +6,7 @@ description: Setting up development environment
 
 ## Quick Start
 
-Install Go - [https://go.dev/doc/install](https://go.dev/doc/install)
+Install Go - [https://go.dev/dl/](https://go.dev/dl/)
 
 Install VS Code - [https://code.visualstudio.com/Download](https://code.visualstudio.com/Download)
 
