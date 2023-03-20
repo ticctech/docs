@@ -39,7 +39,7 @@ echo "machine github.com login <github-user-name> password <token> >> ~/.netrc
 Let Go know the repo is private:
 
 ```
-go env -w GOPRIVATE="github.com/avidaml/*"
+go env -w GOPRIVATE="buf.build/*,github.com/ticctech/*"
 ```
 
 ### VS Code
